@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+/* ================================================================================
+                                 CARD FLIP STYLES
+================================================================================ */
+
+
+.card-container {
+    width: 90%;
+    height: 100%;
+    -webkit-perspective: 800px;
+    perspective: 800px;
+}
+
+label.card {
+    display: block;
+    position: relative;
+    /* #card figure is set to position: absolute. DC*/
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 1s;
+    /* Not sure if this is the correct syntax. DC */
+    transition: transform 1s;
+    cursor: pointer;
+}
+
+label.card div {
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 5px;
+}
+
+.front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.front .date {
+    margin: 1rem;
+}
+
+.front h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+
+.front img {
+    width: 90%;
+    max-height: 50%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    object-fit: contain;
+}
+
+.back {
+    background-color: #b8c6db;
+    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.back img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* ================================================================================
+                                 Checkbox Styles
+================================================================================ */
+
+
+input[type=checkbox] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+/* Or [id*='card']:checked ~ label.card  */
+input[type=checkbox]:checked~label.card {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}

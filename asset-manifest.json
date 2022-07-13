@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Fishergo/static/css/main.f6c90fbd.css",
+    "main.js": "/Fishergo/static/js/main.6fbb9539.js",
+    "index.html": "/Fishergo/index.html",
+    "main.f6c90fbd.css.map": "/Fishergo/static/css/main.f6c90fbd.css.map",
+    "main.6fbb9539.js.map": "/Fishergo/static/js/main.6fbb9539.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f6c90fbd.css",
+    "static/js/main.6fbb9539.js"
+  ]
+}

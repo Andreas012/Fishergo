@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Fishergo/static/css/main.286a3d59.css",
-    "main.js": "/Fishergo/static/js/main.ee60745b.js",
+    "main.js": "/Fishergo/static/js/main.f33b16ac.js",
     "index.html": "/Fishergo/index.html",
     "main.286a3d59.css.map": "/Fishergo/static/css/main.286a3d59.css.map",
-    "main.ee60745b.js.map": "/Fishergo/static/js/main.ee60745b.js.map"
+    "main.f33b16ac.js.map": "/Fishergo/static/js/main.f33b16ac.js.map"
   },
   "entrypoints": [
     "static/css/main.286a3d59.css",
-    "static/js/main.ee60745b.js"
+    "static/js/main.f33b16ac.js"
   ]
 }

@@ -1,14 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-/* ================================================================================
-                                 CARD FLIP STYLES
-================================================================================ */
-
-
 .card {
     display: flex;
     flex-direction: column;
-    min-height: 73%;
+    min-height: 78%;
+}
+
+.card:nth-child(even) .Card-Header {
+    background: #f1f0f0;
+}
+
+.card:nth-child(even) .Icons {
+    background: #f1f0f0;
+}
+
+.card:nth-child(even) .Fish {
+    background: #f1f0f0;
+}
+
+.card:nth-child(even) .Fish-Description {
+    background: #f1f0f0;
 }
 
 .card:last-child {
@@ -40,12 +51,13 @@ h4 {
 
 .card .Card-Header {
     width: 100%;
-    height: 2rem;
+    height: 2.5rem;
     padding-left: 0.5rem;
     display: flex;
     background: white;
     align-items: center;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
+    font-weight: 300;
 }
 
 .card .Icons {

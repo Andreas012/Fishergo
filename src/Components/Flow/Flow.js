@@ -27,7 +27,6 @@ const Flow = () => {
     }
 
     useEffect(() => {
-
         const Init = async () => {
             await GetCards().then((cards) => {
                 setCards(cards);
@@ -40,6 +39,9 @@ const Flow = () => {
 
     return (
         <div className="App">
+            <div className="Header">
+                <h1>Fishergo</h1>
+            </div>
             <div className='Card-Container'>
                 {
                     cards.length > 0 ? cards.reverse().map((card) => {
@@ -53,6 +55,9 @@ const Flow = () => {
                                 location={card[guid].location}
                                 date={card[guid].date}
                                 imageUrl={card[guid].url}
+                                weight={card[guid].weight}
+                                length={card[guid].length}
+                                lure={card[guid].lure}
                             />
                         )
                     }) : <h2 className="No-Content">Det finns inget att visa! <br /><br />😐</h2>

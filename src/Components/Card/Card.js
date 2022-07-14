@@ -41,12 +41,12 @@ const Card = (props) => {
                                 <p>{props.location}</p>
                             </div>
                             <div className="Weight">
-                                <span class="material-symbols-outlined Weight-Icon">weight</span>
-                                <p>9.82kg</p>
+                                <span className="material-symbols-outlined Weight-Icon">weight</span>
+                                <p>{props.weight} kg</p>
                             </div>
                             <div className="Length">
-                                <span class="material-icons Length-Icon">straighten</span>
-                                <p>107cm</p>
+                                <span className="material-icons Length-Icon">straighten</span>
+                                <p>{props.length} cm</p>
                             </div>
                         </div>
                     </div>

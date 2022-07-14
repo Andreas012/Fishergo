@@ -1,9 +1,12 @@
 import React, { } from 'react';
 import { Logout } from '../../Firebase/Firebase';
+import { useNavigate } from 'react-router-dom';
 
 import './Footer.css';
 
 const Footer = (props) => {
+
+    let navigate = useNavigate();
 
     return (
         <div className="Footer">
@@ -12,7 +15,7 @@ const Footer = (props) => {
                 <p>Ladda upp</p>
             </div>
             <div className="Footer-Button">
-                <span className="material-icons Upload-Logo">trending_up</span>
+                <span className="material-icons Upload-Logo" onClick={() => { navigate("/highscore") }}>trending_up</span>
                 <p>Topplista</p>
             </div>
             <div className="Footer-Button">

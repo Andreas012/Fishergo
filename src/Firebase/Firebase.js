@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { getFirestore, collection, addDoc, query, getDocs } from "firebase/firestore";
+import { getFirestore, collection, addDoc, query, getDocs, where, orderBy, limit } from "firebase/firestore";
 import { signInWithEmailAndPassword, signOut } from 'firebase/auth'
 import { getAuth } from 'firebase/auth'
 
@@ -21,12 +21,15 @@ const auth = getAuth(app)
 
 export { auth }
 
-export const CreateCard = async (file, fishName, name, location) => {
+export const CreateCard = async (file, fishName, name, location, weight, length, lure) => {
     try {
         const docRef = await addDoc(collection(db, "cards"), {
             fishName: fishName,
             name: name,
             location: location,
+            weight: weight,
+            length: length,
+            lure: lure,
             date: new Date().toISOString()
         });
         const storageRef = ref(storage, docRef.id);
@@ -66,6 +69,19 @@ export const CreateUserProfile = async (name, uid) => {
     }
 }
 
+export const GetUserProfile = async (uid) => {
+    // Get user from uid
+    const user = await query(collection(db, "users"), where("uid", "==", uid));
+    const snapShot = await getDocs(user);
+
+    let userProfile;
+    snapShot.forEach((doc) => {
+        userProfile = doc.data();
+    });
+
+    return userProfile;
+}
+
 export const login = (e, email, password) => {
     e.preventDefault();
     return signInWithEmailAndPassword(auth, email, password)
@@ -83,4 +99,16 @@ export const Logout = () => {
     }).catch((error) => {
         return error.code;
     });
+}
+
+export const GetTopList = async () => {
+    const scores = await query(collection(db, "cards"), orderBy("weight", "desc"), limit(10));
+    const snapShot = await getDocs(scores);
+
+    let topScores = [];
+    snapShot.forEach((doc) => {
+        topScores.push(doc.data());
+    });
+
+    return topScores;
 }

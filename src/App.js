@@ -9,6 +9,7 @@ import { AuthProvider } from './Context/AuthContext';
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from './Firebase/Firebase';
 import { HashRouter, Routes, Route } from "react-router-dom";
+import Highscore from './Components/Highscore/Highscore';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/" element={<PrivateRoute />} />
           <Route path="/register" element={<Registration />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/highscore" element={<Highscore />} />
         </Routes>
       </AuthProvider>
     </HashRouter>

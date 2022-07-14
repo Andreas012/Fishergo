@@ -9,20 +9,91 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Select from '@mui/material/Select';
 import { MenuItem } from '@mui/material';
+import { useStore } from '../../Context/Context';
+
+const fishes = [
+    "Abborre",
+    "Berggylta",
+    "Bergtunga",
+    "Bleka",
+    "Braxen",
+    "Fjärsing",
+    "Gädda",
+    "Gös",
+    "Havskatt",
+    "Hellefisk",
+    "Hoki",
+    "Horngädda",
+    "Hummer",
+    "Hälleflundra",
+    "Kammussla",
+    "Karp",
+    "Knot",
+    "Kolja",
+    "Krabba",
+    "Kräfta flod",
+    "Kräfta havs",
+    "Kräfta signal",
+    "Kummel",
+    "Kungsfisk",
+    "Lake",
+    "Lax",
+    "Lubb",
+    "Långa",
+    "Makrill",
+    "Marulk",
+    "Ostron",
+    "Pigghaj",
+    "Piggvar",
+    "Regnbågslax",
+    "Rocka",
+    "Räka Nordhavs",
+    "Röding",
+    "Rödspätta/rödspspotta",
+    "Rödtunga",
+    "Sandskädda",
+    "Sej",
+    "Sik",
+    "Siklöja",
+    "Sill/Strömming",
+    "Sillhaj",
+    "Sjurygg",
+    "Sjötunga",
+    "Skarpsill",
+    "Skrubbskädda, skrubba eller flundra",
+    "Slätvar",
+    "Tonfisk",
+    "Torsk",
+    "Vitling",
+    "Ål"
+]
 
 const UploadDialog = (props) => {
+
+    const context = useStore();
 
     const [image, setImage] = useState('');
 
     const fishRef = useRef(null);
     const nameRef = useRef(null);
     const locationRef = useRef(null);
+    const weightRef = useRef(null);
+    const lengthRef = useRef(null);
+    const lureRef = useRef(null);
 
     const upload = () => {
         if (image == null)
             return;
         else
-            CreateCard(image, fishRef.current.value, nameRef.current.value, locationRef.current.value).then(() => {
+            CreateCard(
+                image,
+                fishRef.current.value,
+                nameRef.current.value,
+                locationRef.current.value,
+                weightRef.current.value,
+                lengthRef.current.value,
+                lureRef.current.value,
+            ).then(() => {
                 return props.handleClose();
             });
     }
@@ -37,67 +108,14 @@ const UploadDialog = (props) => {
                         <Select
                             autoFocus
                             inputRef={fishRef}
-                            margin="dense"
-                            id="fish"
-                            label="Fisk"
+                            placeholder='Fisk'
                             type="text"
                             fullWidth
-                            variant="standard"
+                            defaultValue={"Abborre"}
                         >
-                            <MenuItem value={"Abborre"}>Abborre</MenuItem>
-                            <MenuItem value={"Berggylta"}>Berggylta</MenuItem>
-                            <MenuItem value={"Bergtunga"}>Bergtunga</MenuItem>
-                            <MenuItem value={"Bleka"}>Bleka</MenuItem>
-                            <MenuItem value={"Braxen"}>Braxen</MenuItem>
-                            <MenuItem value={"Fjärsing"}>Fjärsing</MenuItem>
-                            <MenuItem value={"Gädda"}>Gädda</MenuItem>
-                            <MenuItem value={"Gös"}>Gös</MenuItem>
-                            <MenuItem value={"Havskatt"}>Havskatt</MenuItem>
-                            <MenuItem value={"Hellefisk"}>Hellefisk</MenuItem>
-                            <MenuItem value={"Hoki"}>Hoki</MenuItem>
-                            <MenuItem value={"Horngädda"}>Horngädda</MenuItem>
-                            <MenuItem value={"Hummer"}>Hummer</MenuItem>
-                            <MenuItem value={"Hälleflundra"}>Hälleflundra</MenuItem>
-                            <MenuItem value={"Kammussla"}>Kammussla</MenuItem>
-                            <MenuItem value={"Karp"}>Karp</MenuItem>
-                            <MenuItem value={"Knot"}>Knot</MenuItem>
-                            <MenuItem value={"Kolja"}>Kolja</MenuItem>
-                            <MenuItem value={"Krabba"}>Krabba</MenuItem>
-                            <MenuItem value={"Kräfta flod"}>Kräfta flod</MenuItem>
-                            <MenuItem value={"Kräfta havs"}>Kräfta havs</MenuItem>
-                            <MenuItem value={"Kräfta signal"}>Kräfta signal</MenuItem>
-                            <MenuItem value={"Kummel"}>Kummel</MenuItem>
-                            <MenuItem value={"Kungsfisk"}>Kungsfisk</MenuItem>
-                            <MenuItem value={"Lake"}>Lake</MenuItem>
-                            <MenuItem value={"Lax"}>Lax</MenuItem>
-                            <MenuItem value={"Lubb"}>Lubb</MenuItem>
-                            <MenuItem value={"Långa"}>Långa</MenuItem>
-                            <MenuItem value={"Makrill"}>Makrill</MenuItem>
-                            <MenuItem value={"Marulk"}>Marulk</MenuItem>
-                            <MenuItem value={"Ostron"}>Ostron</MenuItem>
-                            <MenuItem value={"Pigghaj"}>Pigghaj</MenuItem>
-                            <MenuItem value={"Piggvar"}>Piggvar</MenuItem>
-                            <MenuItem value={"Regnbågslax"}>Regnbågslax</MenuItem>
-                            <MenuItem value={"Rocka"}>Rocka</MenuItem>
-                            <MenuItem value={"Räka Nordhavs"}>Räka Nordhavs</MenuItem>
-                            <MenuItem value={"Röding"}>Röding</MenuItem>
-                            <MenuItem value={"Rödspätta/rödspotta"}>Rödspätta/rödspotta</MenuItem>
-                            <MenuItem value={"Rödtunga"}>Rödtunga</MenuItem>
-                            <MenuItem value={"Sandskädda"}>Sandskädda</MenuItem>
-                            <MenuItem value={"Sej"}>Sej</MenuItem>
-                            <MenuItem value={"Sik"}>Sik</MenuItem>
-                            <MenuItem value={"Siklöja"}>Siklöja</MenuItem>
-                            <MenuItem value={"Sill/Strömming"}>Sill/Strömming</MenuItem>
-                            <MenuItem value={"Sillhaj"}>Sillhaj</MenuItem>
-                            <MenuItem value={"Sjurygg"}>Sjurygg</MenuItem>
-                            <MenuItem value={"Sjötunga"}>Sjötunga</MenuItem>
-                            <MenuItem value={"Skarpsill"}>Skarpsill</MenuItem>
-                            <MenuItem value={"Skrubbskädda, skrubba eller flundra"}>Skrubbskädda, skrubba eller flundra</MenuItem>
-                            <MenuItem value={"Slätvar"}>Slätvar</MenuItem>
-                            <MenuItem value={"Tonfisk"}>Tonfisk</MenuItem>
-                            <MenuItem value={"Torsk"}>Torsk</MenuItem>
-                            <MenuItem value={"Vitling"}>Vitling</MenuItem>
-                            <MenuItem value={"Ål"}>Ål</MenuItem>
+                            {fishes.map((fish) => {
+                                return <MenuItem key={fish} value={fish}>{fish}</MenuItem>
+                            })}
                         </Select>
                         <TextField
                             inputRef={nameRef}
@@ -107,12 +125,41 @@ const UploadDialog = (props) => {
                             type="text"
                             fullWidth
                             variant="standard"
+                            defaultValue={context.userProfile ? context.userProfile.name : ""}
+                            disabled
                         />
                         <TextField
                             inputRef={locationRef}
                             margin="dense"
                             id="place"
                             label="Plats"
+                            type="text"
+                            fullWidth
+                            variant="standard"
+                        />
+                        <TextField
+                            inputRef={weightRef}
+                            margin="dense"
+                            id="place"
+                            label="Vikt (kg)"
+                            type="text"
+                            fullWidth
+                            variant="standard"
+                        />
+                        <TextField
+                            inputRef={lengthRef}
+                            margin="dense"
+                            id="place"
+                            label="Längd (cm)"
+                            type="text"
+                            fullWidth
+                            variant="standard"
+                        />
+                        <TextField
+                            inputRef={lureRef}
+                            margin="dense"
+                            id="place"
+                            label="Drag"
                             type="text"
                             fullWidth
                             variant="standard"

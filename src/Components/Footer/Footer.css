@@ -11,8 +11,7 @@
     position: sticky;
     z-index: 1000;
     background: white;
-    -webkit-box-shadow: 0px -5px 15px -5px #000000;
-    box-shadow: 0px -5px 15px -5px #000000;
+    border-top: 1px solid rgba(128, 128, 128, 0.582);
     margin-top: auto;
 }
 

@@ -27,21 +27,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.815);
+    background: rgba(255, 255, 255, 0.3);
     height: 60%;
     width: 80%;
     border-radius: 20px;
-    border-left: 1px solid white;
-    border-top: 1px solid white;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(1px);
     box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
     text-align: center;
     position: relative;
     transition: all 0.2s ease-in-out;
+    z-index: 1;
+    position: relative;
 }
 
 .Login .Login-Button {
-    background: rgba(255, 255, 255, 0.815);
+    background: rgb(255, 255, 255);
     height: 15%;
     width: 80%;
     border-radius: 20px;
@@ -94,6 +94,7 @@
     height: 15%;
     width: 80%;
     font-size: 1.2rem;
+    color: white;
 }
 
 .Login .waves {
@@ -133,5 +134,150 @@
 
     100% {
         transform: translate3d(85px, 0, 0);
+    }
+}
+
+.Fish-Bowl {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.fish {
+    width: 235px;
+    height: 104px;
+    margin-left: -235px;
+    position: absolute;
+    animation: swim 15s;
+    -webkit-animation: swim 15s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+    z-index: 0;
+}
+
+svg #fish1,
+svg #fish2,
+svg #fish3 {
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+}
+
+#fish1 {
+    bottom: 15%;
+    fill: #cf4f4fe8 !important;
+}
+
+#fish2 {
+    animation-delay: 8s;
+    -webkit-animation-delay: 8s;
+    bottom: 50%;
+    fill: #77da4ae8 !important;
+}
+
+#fish3 {
+    animation-delay: 6s;
+    -webkit-animation-delay: 6s;
+    bottom: 75%;
+    fill: #ddb04ee8 !important;
+}
+
+@-moz-keyframes bounce {
+
+    0%,
+    50%,
+    100% {
+        -moz-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    25% {
+        -moz-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+
+    75% {
+        -moz-transform: translateY(-3px);
+        transform: translateY(-3px);
+    }
+}
+
+@-webkit-keyframes bounce {
+
+    0%,
+    50%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    25% {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+
+    75% {
+        -webkit-transform: translateY(-3px);
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    50%,
+    100% {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    25% {
+        -moz-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+
+    75% {
+        -moz-transform: translateY(-3px);
+        -ms-transform: translateY(-3px);
+        -webkit-transform: translateY(-3px);
+        transform: translateY(-3px);
+    }
+}
+
+@-webkit-keyframes swim {
+    0% {
+        left: -235px
+    }
+
+    90% {
+        margin-left: 100%;
+    }
+
+    100% {
+        margin-left: 100%;
+    }
+}
+
+@keyframes swim {
+    0% {
+        margin-left: -235px
+    }
+
+    70% {
+        margin-left: 100%;
+    }
+
+    100% {
+        margin-left: 100%;
     }
 }

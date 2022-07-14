@@ -1,0 +1,28 @@
+.Highscore {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Highscore .Header-Text {
+    color: white;
+}
+
+.Highscore h1 {
+    margin: 0;
+}
+
+.Highscore td {
+    text-align: center;
+}
+
+.TopList {
+    width: 95% !important;
+    margin-top: 1rem;
+}
+
+.MuiTable-root {
+    min-width: 95% !important;
+}

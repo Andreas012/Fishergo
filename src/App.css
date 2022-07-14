@@ -8,6 +8,7 @@
 
 .Card-Container {
   overflow: scroll;
+  height: 100%;
 }
 
 .MuiInputBase-fullWidth {
@@ -18,4 +19,12 @@
   margin-top: 50%;
   text-align: center;
   color: rgba(218, 218, 218, 0.695);
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  background: white;
 }

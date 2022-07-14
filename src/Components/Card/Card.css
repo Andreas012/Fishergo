@@ -5,42 +5,20 @@
 ================================================================================ */
 
 
-.card-container {
-    width: 90%;
-    height: 100%;
-    -webkit-perspective: 800px;
-    perspective: 800px;
+.card {
+    display: flex;
+    flex-direction: column;
+    min-height: 73%;
 }
 
-label.card {
-    display: block;
-    position: relative;
-    /* #card figure is set to position: absolute. DC*/
-    width: 100%;
-    height: 100%;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transition: -webkit-transform 1s;
-    /* Not sure if this is the correct syntax. DC */
-    transition: transform 1s;
-    cursor: pointer;
-}
-
-label.card div {
-    position: absolute;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    border-radius: 5px;
+.card:last-child {
+    margin-bottom: 0;
 }
 
 .front {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
 }
 
 .front .date {
@@ -54,27 +32,102 @@ h4 {
     margin: 0;
 }
 
-.front img {
-    width: 90%;
-    max-height: 50%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    object-fit: contain;
-}
-
-.back {
-    background-color: #b8c6db;
-    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-}
-
-.back img {
+.card img {
     width: 100%;
-    height: 100%;
+    max-height: 100%;
     object-fit: contain;
 }
 
+.card .Card-Header {
+    width: 100%;
+    height: 2rem;
+    padding-left: 0.5rem;
+    display: flex;
+    background: white;
+    align-items: center;
+    font-size: 0.7rem;
+}
+
+.card .Icons {
+    display: flex;
+    align-items: center;
+}
+
+.card .Date {
+    margin-left: auto;
+    margin-right: 1vh;
+}
+
+.card .Fish-Details {
+    width: 100%;
+    height: 2.5rem;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.card .Fish-Description {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: white;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.card .Fish {
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.card .Favorite-Icon {
+    margin: 1vh 0 1vh 1vh;
+    fill: 0 !important;
+}
+
+.card .Comment-Icon {
+    margin: 1vh;
+}
+
+.card .Fish-Icon {
+    font-size: 1.5rem;
+    margin: 1vh;
+}
+
+.card .Pin-Icon {
+    margin: 1vh;
+}
+
+.card .Weight-Icon {
+    margin: 1vh;
+}
+
+.card .Length-Icon {
+    margin: 1vh;
+}
+
+.card p {
+    margin: 0;
+}
+
+.card .Location {
+    display: flex;
+    align-items: center;
+}
+
+.card .Weight {
+    display: flex;
+    align-items: center;
+}
+
+.card .Length {
+    display: flex;
+    align-items: center;
+}
 
 /* ================================================================================
                                  Checkbox Styles

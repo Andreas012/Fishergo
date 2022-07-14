@@ -49,7 +49,6 @@ const Login = () => {
                         }
                     })
                 }} name='login_form'>
-                    <p className="Title">Fishergo</p>
                     <label>
                         <input ref={EmailRef} type="text" name="email" placeholder="Email" />
                     </label>

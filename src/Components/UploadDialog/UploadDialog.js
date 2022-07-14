@@ -100,7 +100,7 @@ const UploadDialog = (props) => {
 
     return (
         <div>
-            <Dialog open={props.open} onClose={props.handleClose}>
+            <Dialog open={context.open ? context.open : false} onClose={() => { context.setOpen(false) }}>
                 <DialogTitle>Ladda upp</DialogTitle>
                 <DialogContent>
                     <center>

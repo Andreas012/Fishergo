@@ -3,28 +3,11 @@ import { GetCards } from '../../Firebase/Firebase';
 import Card from '../Card/Card';
 import UploadDialog from '../UploadDialog/UploadDialog';
 import Footer from '../Footer/Footer';
+import { Logout } from '../../Firebase/Firebase';
 
 const Flow = () => {
 
     const [cards, setCards] = useState([]);
-    const [open, setOpen] = useState(false);
-
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-
-        const Init = async () => {
-            await GetCards().then((cards) => {
-                setCards(cards);
-            });
-        }
-
-        Init();
-
-    }
 
     useEffect(() => {
         const Init = async () => {
@@ -39,9 +22,6 @@ const Flow = () => {
 
     return (
         <div className="App">
-            <div className="Header">
-                <h1>Fishergo</h1>
-            </div>
             <div className='Card-Container'>
                 {
                     cards.length > 0 ? cards.reverse().map((card) => {
@@ -63,8 +43,6 @@ const Flow = () => {
                     }) : <h2 className="No-Content">Det finns inget att visa! <br /><br />😐</h2>
                 }
             </div>
-            <Footer handleClickOpen={handleClickOpen} />
-            <UploadDialog open={open} handleClose={handleClose} />
         </div>
     );
 }

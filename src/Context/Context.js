@@ -10,6 +10,7 @@ export const StoreProvider = ({ children }) => {
 
     const [currentUser, setCurrentUser] = useState(null)
     const [userProfile, setUserProfile] = useState(null)
+    const [open, setOpen] = useState(false)
 
     useEffect(() => {
         onAuthStateChanged(auth, async (user) => {
@@ -30,7 +31,9 @@ export const StoreProvider = ({ children }) => {
     return (
         <Store.Provider value={{
             currentUser,
-            userProfile
+            userProfile,
+            open,
+            setOpen
         }}>
             {children}
         </Store.Provider>

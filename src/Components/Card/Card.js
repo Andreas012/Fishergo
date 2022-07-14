@@ -13,7 +13,6 @@ const Card = (props) => {
     }
 
     useEffect(() => {
-        console.log(props)
         GetUrl();
         // eslint-disable-next-line
     }, []);

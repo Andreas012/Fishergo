@@ -10,7 +10,7 @@
     justify-items: center;
     position: sticky;
     z-index: 1000;
-    background: white;
+    background: rgba(255, 255, 255, 0.8);
     border-top: 1px solid rgba(128, 128, 128, 0.582);
     margin-top: auto;
 }
@@ -25,7 +25,7 @@
 }
 
 .Footer .Upload-Logo {
-    font-size: 2rem;
+    font-size: 1.5rem;
     border: none;
     color: black;
 }

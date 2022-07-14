@@ -38,9 +38,8 @@ const Highscore = () => {
                     </TableHead>
                     <TableBody>
                         {topList.map((row, i) => {
-                            console.log(i)
                             return (
-                                <TableRow key={row.id}>
+                                <TableRow key={i}>
                                     <TableCell component="th" scope="row">
                                         {i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : null}{row.name}
                                     </TableCell>

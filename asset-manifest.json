@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Fishergo/static/css/main.522944aa.css",
-    "main.js": "/Fishergo/static/js/main.93abf91a.js",
+    "main.css": "/Fishergo/static/css/main.d73a87fe.css",
+    "main.js": "/Fishergo/static/js/main.9291e3ed.js",
     "static/media/ProfilePic.jpg": "/Fishergo/static/media/ProfilePic.f2510269b189c016ace5.jpg",
     "static/media/Loading_icon.gif": "/Fishergo/static/media/Loading_icon.1a32f552ee5280e2aef9.gif",
     "index.html": "/Fishergo/index.html",
-    "main.522944aa.css.map": "/Fishergo/static/css/main.522944aa.css.map",
-    "main.93abf91a.js.map": "/Fishergo/static/js/main.93abf91a.js.map"
+    "main.d73a87fe.css.map": "/Fishergo/static/css/main.d73a87fe.css.map",
+    "main.9291e3ed.js.map": "/Fishergo/static/js/main.9291e3ed.js.map"
   },
   "entrypoints": [
-    "static/css/main.522944aa.css",
-    "static/js/main.93abf91a.js"
+    "static/css/main.d73a87fe.css",
+    "static/js/main.9291e3ed.js"
   ]
 }
